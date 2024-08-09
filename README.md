@@ -5,6 +5,11 @@ This is a collection of scripts that I am maintaining which transform a fresh in
 - git
 - zsh (with [OhMyZsh](https://ohmyz.sh/) & [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/) )
 - Docker
+- Tmux
+- tree
+- flameshot
+- gpick
+- fzf
 
 # Limitations
 - Docker installation required that you are running `bookworm` version of Debian or similarly Debian-based distribution.
