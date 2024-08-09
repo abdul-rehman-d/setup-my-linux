@@ -1,5 +1,7 @@
 #!/bin/bash
 
+HOME=/home/$SUDO_USER
+
 ##################
 # CHECK FOR SUDO #
 ##################
@@ -19,6 +21,16 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install git -y
 
 ##################
+# GET DOTFILES   #
+##################
+git clone https://github.com/abdul-rehman-d/dotfiles $HOME/dotfiles
+
+#########################
+# INSTALL MISC SOFTWARE #
+#########################
+sudo apt install -y $(cat misc_software_list.txt | tr '\n' ' ')
+
+##################
 # INSTALL "ZSH"  #
 ##################
 sudo ./subscripts/install_zsh.sh
@@ -28,17 +40,13 @@ sudo ./subscripts/install_zsh.sh
 ####################
 sudo ./subscripts/install_docker.sh
 
-#########################
-# INSTALL MISC SOFTWARE #
-#########################
-sudo apt install -y $(cat misc_software_list.txt | tr '\n' ' ')
-
 ##################
 # INSTALL "TMUX" #
 ##################
-sudo apt install tmux
+sudo ./subscripts/install_tmux.sh
 
 ####################
 # REBOOTING SYSTEM #
 ####################
 sudo reboot
+
